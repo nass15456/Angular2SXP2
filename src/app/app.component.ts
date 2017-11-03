@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Http} from "@angular/http";
+
 import { Router } from '@angular/router';
 import {  AuthenticationService } from './authentication.service';
 
@@ -15,6 +15,7 @@ u: any = {};
 
   model: any = {};
   loginForm:boolean = true;
+  loginForms:boolean = true;
   search:boolean = false;
   subscribe:boolean = false;
 
@@ -25,15 +26,16 @@ u: any = {};
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService,
+
     ) { }
 
 
   login()
   {
-    this.loginForm=true;
+    this.loginForms=false;
     this.search =false;
     this.subscribe = false;
-
+    this.loginForm= true;
 
   }
   searchIt()
@@ -41,9 +43,18 @@ u: any = {};
     this.search =true;
     this.loginForm=false;
     this.subscribe = false;
+    this.loginForms= false;
   }
+  downLogin()
+  {
+    this.loginForm=false;
+    this.loginForms= false;
+  }
+  upLogin()
+  {
 
-
+    this.loginForms= true;
+  }
 
   toUpperCase () {
     this.u.username = this.u.username.toUpperCase();
@@ -54,31 +65,7 @@ u: any = {};
     this.search =false;
     this.loginForm=false;
     this.subscribe = true;
-  }
-  logs()
-  {
-
-    if(this.model.username.length > 0 )
-    {   console.log(this.model.username);
-         let formdata = new FormData();
-         formdata.append('username', this.model.username);
-         formdata.append('password', this.model.password);
-      console.log(this.model.password);
-
-
-      this.loading = true;
-      this.authenticationService.login(this.model.username, this.model.password)
-        .subscribe(
-          data => {
-          console.log('succes');
-          },
-          error => {
-
-            this.loading = false;
-          });
-
-
-    }
+    this.loginForms= false;
   }
 
 

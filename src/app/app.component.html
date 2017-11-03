@@ -1,89 +1,45 @@
 
-<h1 *ngIf="loginForm" > login </h1>
+<h1 *ngIf="loginForms || loginForm"  > login </h1>
 <h1 *ngIf="search" > search </h1>
 <h1 *ngIf="subscribe" > subscribe </h1>
-<div id="sidebar-wrapper" ng-show="hamburger" class="" style="">
-  <ul class="sidebar-nav">
-    <li class="sidebar-brand"><a href="#">Home</a></li>
-    <li><a href="#/myitems" class="ng-hide">Items</a></li>
-    <li><a href="/#search" (click)="searchIt()">Search</a></li>
-    <li><a href="#login" ui-sref="login"  (click)="login()" class="">Login</a></li>
 
-  </ul>
-
-
-</div>
-
-
-<form *ngIf="loginForm" class="col-sm-10"  #f="ngForm" novalidate>
+<form *ngIf="loginForms " class="col-sm-10"  #f="ngForm" novalidate>
 
   <input placeholder="username" type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required /><br>
 
 
 
   <input placeholder="password" type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required /><br>
-  <button class="btn btn-default" (click)="logs()" > login </button>
+  <button class="btn btn-default"  >login </button>
 
 
 
-  <button class="btn btn-info" (click)="sub()"> creer compte </button>
+  <button class="btn btn-info" routerLink="/subscribe" (click)="sub()"> creer compte </button>
 
 
 </form>
 
 
-<div *ngIf="search" class="input-group input-group-lg col-xs-10">
+<div id="sidebar-wrapper" ng-show="hamburger" class="" style="">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand" (click)="upLogin()"  ><a href="#">Home</a></li>
+    <li><a href="#/myitems" class="ng-hide">Items</a></li>
+    <li><a routerLink="/search" (click)="searchIt()" (click)="downLogin()">Search</a></li>
+    <li><a routerLink="/login"   (click)="login()">Login</a></li>
 
-  <input type="text" class="form-control" ng-model="research" placeholder="Search for items." ng-keyup="search()">
+
+  </ul>
+
 
 </div>
 
-
-<div *ngIf="search" ng-show="research.length > 0">
-  <div class="row">
-    <div class="col-xs-10">
-      <div class="alert alert-danger ng-clignotement" role="alert" ng-show="errorSearch">No objects found</div>
-      <div class="alert" role="alert" ng-show="searchItem"><div class="loader"></div></div>
-      <div href ui-sref="searchViewItem({id: item.id})" class="panel panel-default search-result" ng-repeat="item in results" style="cursor: pointer;">
-        <div class="panel-heading">
-          <h3 class="panel-title"> {{item.title}}</h3>
-        </div>
-        <div class="panel-body">
-          <p>{{item.description}}</p>
-          <p><small>posted : {{item.createdAt}} by {{item.username}}</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>
 
 
-<form *ngIf="subscribe"  class="form-horizontal" ng-submit="submit()">
-  <div class="form-group">
-    <label for="server" class="col-sm-2 control-label">Server</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="server" placeholder="" ng-model="form.server">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="login" class="col-sm-2 control-label">Login</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="login" placeholder="choose an username/nick" ng-model="form.login">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="password" class="col-sm-2 control-label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="password" placeholder="put a long and securised password" ng-model="form.password">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Submit</button>
-      <a href ui-sref="login" class="btn btn-warning" onclick="window.history.back()">Cancel</a>
-    </div>
-  </div>
-</form>
+
+
+
+
 
 
 

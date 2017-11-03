@@ -8,12 +8,17 @@ import { SearchComponent } from './search/search.component';
 import { NgModule } from '@angular/core';
 import {Http, HttpModule} from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     ContactComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent,
+    SubscribeComponent
   ],
   imports: [
     HttpModule,
@@ -28,6 +33,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         path: 'search',
         component : SearchComponent
         }
+        ,
+        {
+          path: 'login',
+          component : LoginComponent
+        }
+        ,{
+          path: 'subscribe',
+          component : SubscribeComponent
+         }
 
 
       ]
