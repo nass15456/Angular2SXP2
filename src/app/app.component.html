@@ -1,12 +1,13 @@
 
+
 <h1 *ngIf="loginForms || loginForm"  > login </h1>
-<h1 *ngIf="search" > search </h1>
+<h1 *ngIf="search " > search </h1>
 <h1 *ngIf="subscribe" > subscribe </h1>
+<h1 *ngIf= "set " > settings </h1>
 
-<form *ngIf="loginForms " class="col-sm-10"  #f="ngForm" novalidate>
+<form *ngIf="loginForms && !loginForm " class="col-sm-10"  #f="ngForm" novalidate>
 
-  <input placeholder="username" type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required /><br>
-
+  <input placeholder="username" type="text" class="form-control" name="username" [(ngModel)]="model.login" #login="ngModel" required /><br>
 
 
   <input placeholder="password" type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required /><br>
@@ -22,10 +23,11 @@
 
 <div id="sidebar-wrapper" ng-show="hamburger" class="" style="">
   <ul class="sidebar-nav">
-    <li class="sidebar-brand" (click)="upLogin()"  ><a href="#">Home</a></li>
-    <li><a href="#/myitems" class="ng-hide">Items</a></li>
+    <li  class="sidebar-brand" (click)="upLogin()"  ><a href="#">Home</a></li>
+    <li ><a  routerLink="/setting" (click)="settingUp()">Settings</a></li>
+    <li ><a  >Items</a></li>
     <li><a routerLink="/search" (click)="searchIt()" (click)="downLogin()">Search</a></li>
-    <li><a routerLink="/login"   (click)="login()">Login</a></li>
+    <li><a routerLink="/login"   (click)="login1()">Login</a></li>
 
 
   </ul>

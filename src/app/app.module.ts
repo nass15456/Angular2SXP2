@@ -4,13 +4,16 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { ContactComponent } from './contact/contact.component';
 import {RouterModule} from '@angular/router';
+
 import { SearchComponent } from './search/search.component';
 import { NgModule } from '@angular/core';
 import {Http, HttpModule} from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
+import { SettingsComponent } from './settings/settings.component';
 
+import { SettingComponent } from './setting/setting.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,9 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
     ContactComponent,
     SearchComponent,
     LoginComponent,
-    SubscribeComponent
+    SubscribeComponent,
+    SettingsComponent,
+    SettingComponent
   ],
   imports: [
     HttpModule,
@@ -41,6 +46,14 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
         ,{
           path: 'subscribe',
           component : SubscribeComponent
+         },
+         {
+          path: 'setting',
+          component :  SettingComponent
+         },
+         {
+          path: 'settings',
+           component : SettingsComponent
          }
 
 
