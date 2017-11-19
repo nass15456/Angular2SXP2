@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {UserServiceService } from '../user-service.service';
+import { UserserviceService } from '../userservice.service';
 import { AlertService } from '../alert.service';
 @Component({
   selector: 'app-subscribe',
@@ -12,8 +12,8 @@ export class SubscribeComponent implements OnInit {
   loading = false;
   constructor(
    private router: Router,
-// private userService: UserServiceService,
-  //private alertService: AlertService
+private userService:UserserviceService ,
+private alertService: AlertService
 
   ) {
 
@@ -22,17 +22,21 @@ export class SubscribeComponent implements OnInit {
 
   ngOnInit() {
   }
- /* register() {
+
+
+ register() {
     this.loading = true;
-    this.userService.create(this.model)
+    this.userService.create(`login=${this.model.login}&password=${this.model.password}`)
       .subscribe(
         data => {
           this.alertService.success('Registration successful', true);
          console.log("fine");
+          this.router.navigate(['/login']);
         },
         error => {
-          this.alertService.error(error);
+   this.alertService.error(error);
+          console.log(" not fine");
           this.loading = false;
         });
-  }*/
+  }
 }

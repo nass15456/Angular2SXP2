@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
+import { Alert, AlertType } from './alert';
 @Injectable()
 export class AlertService {
   private subject = new Subject<any>();
+  private keepAfterRouteChange = false;
   private keepAfterNavigationChange = false;
   constructor(private router: Router) {
 
@@ -17,6 +19,7 @@ export class AlertService {
         } else {
           // clear alert
           this.subject.next();
+
         }
       }
     });
@@ -26,6 +29,15 @@ export class AlertService {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
     this.subject.next({ type: 'success', text: message });
   }
+  success2(message: string, keepAfterRouteChange = false) {
+    this.alert(AlertType.Success, message, keepAfterRouteChange);
+  }
+
+  alert(type: AlertType, message: string, keepAfterRouteChange = false) {
+    this.keepAfterRouteChange = keepAfterRouteChange;
+    this.subject.next(<Alert>{ type: type, message: message });
+  }
+
 
   error(message: string, keepAfterNavigationChange = false) {
     this.keepAfterNavigationChange = keepAfterNavigationChange;

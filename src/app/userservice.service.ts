@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import { User } from './user';
+import {User } from './user';
+import { Router } from '@angular/router';
 @Injectable()
-export class UserServiceService {
+export class UserserviceService {
+  currentUser: User;
+  constructor(private http: Http,
+              private router :Router) {
 
-  constructor(private http: Http) { }
-
-
-
-  create(user: User) {
-    return this.http.post('/api/users', user, this.jwt()).map((response: Response) => response.json());
+  }
+  create(user: String) {
+    return this.http.post('https://localhost:8081/api/users/subscribe', user, this.jwt()).map((response: Response) => response.json());
   }
 
-
-  // private helper methods
 
   private jwt() {
     // create authorization header with jwt token

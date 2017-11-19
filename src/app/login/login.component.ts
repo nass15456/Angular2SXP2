@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { AlertService } from '../alert.service';
 import {  AuthenticationService } from '../authentication.service';
 @Component({
   selector: 'app-login',
@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
 
     private authenticationService: AuthenticationService,
+    private alertService: AlertService
   ) {
 
   }
@@ -23,6 +24,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  error(message: string) {
+    this.alertService.error(message);
+  }
+
   loginDb(){
     this.loading = true;
     this.authenticationService.loginDb(`login=${this.model.login}&password=${this.model.password}`,this.loading).subscribe(
@@ -32,7 +38,7 @@ export class LoginComponent implements OnInit {
         },
         error => {
           //console.log("not fine login="+  this.model.login+ "password : "+this.model.password);
-
+          this.alertService.error(error);
         });
   }
 

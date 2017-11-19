@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
 import {  AuthenticationService } from './authentication.service'
-
+import { AlertService } from './alert.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -27,8 +27,9 @@ u: any = {};
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService,
+    private alertService:AlertService
 
-    ) { }
+  ) { }
 
 
 
@@ -75,6 +76,13 @@ u: any = {};
     this.loginForm=false;
     this.subscribe = true;
     this.loginForms= false;
+  }
+  success(message: string) {
+    this.alertService.success(message);
+  }
+  success1(message: string) {
+    this.alertService.success(message);
+    console.log("alert");
   }
   /*logindb() {
     this.loading = true;

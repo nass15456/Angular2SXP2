@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http,Headers, Response} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
-import { UserServiceService } from './user-service.service';
+import { UserserviceService } from './userservice.service';
 import { User } from './user';
 import 'rxjs/add/operator/map'
 @Injectable()
