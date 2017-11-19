@@ -80,6 +80,11 @@ u: any = {};
   success(message: string) {
     this.alertService.success(message);
   }
+  success3(){
+    this.alertService.success('Registration successful', true);
+
+  }
+
   success1(message: string) {
     this.alertService.success(message);
     console.log("alert");

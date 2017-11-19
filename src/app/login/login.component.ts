@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
         },
         error => {
           //console.log("not fine login="+  this.model.login+ "password : "+this.model.password);
-          this.alertService.error(error);
+
+          this.alertService.error('wrong password or username', true);
         });
   }
 

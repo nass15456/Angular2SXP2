@@ -6,7 +6,6 @@ import { Alert, AlertType } from './alert';
 @Injectable()
 export class AlertService {
   private subject = new Subject<any>();
-  private keepAfterRouteChange = false;
   private keepAfterNavigationChange = false;
   constructor(private router: Router) {
 
@@ -29,14 +28,9 @@ export class AlertService {
     this.keepAfterNavigationChange = keepAfterNavigationChange;
     this.subject.next({ type: 'success', text: message });
   }
-  success2(message: string, keepAfterRouteChange = false) {
-    this.alert(AlertType.Success, message, keepAfterRouteChange);
-  }
 
-  alert(type: AlertType, message: string, keepAfterRouteChange = false) {
-    this.keepAfterRouteChange = keepAfterRouteChange;
-    this.subject.next(<Alert>{ type: type, message: message });
-  }
+
+
 
 
   error(message: string, keepAfterNavigationChange = false) {

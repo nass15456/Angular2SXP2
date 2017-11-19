@@ -36,7 +36,9 @@ private alertService: AlertService
         error => {
    this.alertService.error(error);
           console.log(" not fine");
+
           this.loading = false;
+
         });
   }
 }
