@@ -15,7 +15,10 @@ import { SettingsComponent } from './settings/settings.component';
 import { AlertService } from './alert.service';
 import { SettingComponent } from './setting/setting.component';
 import { AlertComponent } from './alert/alert.component';
-
+import { ItemsService } from './items.service';
+import { ItemComponent } from './item/item.component';
+import { AcountComponent } from './acount/acount.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +31,9 @@ import { AlertComponent } from './alert/alert.component';
     SettingsComponent,
     SettingComponent,
     AlertComponent,
+    ItemComponent,
+    AcountComponent,
+    ChangepasswordComponent
 
 
   ],
@@ -60,14 +66,29 @@ import { AlertComponent } from './alert/alert.component';
          {
           path: 'settings',
            component : SettingsComponent
-         }
-
+         },
+      {
+        path: 'item',
+        component : ItemComponent
+      },
+      {
+        path: '',
+        component : LoginComponent
+      },
+      {
+        path: 'acount',
+        component :AcountComponent
+      },
+      {
+        path: 'changepassword',
+        component :ChangepasswordComponent
+      }
 
       ]
     )
 
   ],
-  providers: [ AuthenticationService,UserserviceService,AlertService],
+  providers: [ AuthenticationService,UserserviceService,AlertService,ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

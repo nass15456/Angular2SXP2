@@ -117,6 +117,8 @@ button, input, select, textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  margin-left: 300px;
+ padding-right: 900px;
 }
 .btn {
   display: inline-block;
@@ -210,6 +212,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
+  margin-left: 300px;
 }
 #sidebar-wrapper {
   z-index: 1000;
@@ -237,4 +240,27 @@ h1{
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 6px;
+}
+.panel-default>.panel-heading {
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+  margin-left: 300px;
+}
+
+.research{
+  margin-left: 300px;
+}
+.panel-title{
+
+  margin-left: 300px;
+}
+.left{
+  margin-left: 300px;
 }

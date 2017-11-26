@@ -1,8 +1,10 @@
 export class User {
 
-  id: number;
+  id:string;
   login: string;
   password: string;
+  userid : string;
+  nick: string;
   firstName: string;
   lastName: string;
 

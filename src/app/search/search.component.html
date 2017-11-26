@@ -1,24 +1,15 @@
 <div class="input-group input-group-lg col-xs-10">
 
-  <input type="text" class="form-control" ng-model="research" placeholder="Search for items." ng-keyup="search()">
-
+  <input type="text"  class="form-control" [(ngModel)]="model.search"  name="search"  #search="ngModel" required placeholder="Search for items.">
+  <h4> {{currentUser.userid}}</h4>
+  <h3 class="left" *ngIf="item!==undefined">item = {{item.description}} </h3>
+  <button class="btn btn-default" (click)="setSh()" >search </button>
 </div>
+
+
 
 <br /><br />
-<div ng-show="research.length > 0">
-  <div class="row">
-    <div class="col-xs-10">
-      <div class="alert alert-danger ng-clignotement" role="alert" ng-show="errorSearch">No objects found</div>
-      <div class="alert" role="alert" ng-show="searchItem"><div class="loader"></div></div>
-      <div href ui-sref="searchViewItem({id: item.id})" class="panel panel-default search-result" ng-repeat="item in results" style="cursor: pointer;">
-        <div class="panel-heading">
-          <h3 class="panel-title"> </h3>
-        </div>
-        <div class="panel-body">
-          <p></p>
-          <p><small></small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
+

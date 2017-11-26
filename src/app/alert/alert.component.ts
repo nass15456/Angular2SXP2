@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertService } from '../alert.service';
+import { User } from '../user';
 @Component({
   moduleId: module.id,
   selector: 'app-alert',
@@ -8,7 +9,7 @@ import { AlertService } from '../alert.service';
 })
 export class AlertComponent {
   message: any;
-
+  currentUser: User;
   constructor(private alertService: AlertService) { }
 
   ngOnInit() {
