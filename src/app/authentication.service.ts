@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import {Http,Headers, Response} from '@angular/http';
+
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 import { UserserviceService } from './userservice.service';
 import { AlertService } from './alert.service';
 import { User } from './user';
 import 'rxjs/add/operator/map';
-
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
 
 @Injectable()
 export class AuthenticationService {
@@ -44,8 +44,10 @@ export class AuthenticationService {
         }
       });
   }
- changepass(loginss : string, loading :boolean) {
-    return this.http.post('https://localhost:8081/api/users/password',  loginss)
+ change(loginss : string, loading :boolean, token : string) {
+   let headers = new Headers({ 'Auth-Token':token});
+   let options = new RequestOptions({ headers: headers })
+    return this.http.post('https://localhost:8081/api/users/password', loginss,{ headers: headers } )
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
         let user = response.json();
@@ -56,7 +58,7 @@ export class AuthenticationService {
           console.log("userid =", user.userid);
 
           console.log("fine login");
-          this.alertService.success('user connected ', true);
+          this.alertService.success('password changed ', true);
           loading = true;
 
           this.router.navigate(['login']);
@@ -79,6 +81,17 @@ export class AuthenticationService {
 
         }
       });
+  }
+
+  private jwt4() {
+    // create authorization header with jwt token
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser && currentUser.token) {
+      let headers = new Headers({ 'Auth-Token':currentUser.token});
+      return new RequestOptions({ headers: headers });
+    }
+
+
   }
 
 }

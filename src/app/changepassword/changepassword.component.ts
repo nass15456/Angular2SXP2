@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  AuthenticationService } from '../authentication.service';
-
+import { User } from '../user';
 
 @Component({
   selector: 'app-changepassword',
@@ -10,8 +10,16 @@ import {  AuthenticationService } from '../authentication.service';
 export class ChangepasswordComponent implements OnInit {
  loading : boolean = true;
   model: any = {};
-  constructor(private authenticationService: AuthenticationService) { }
+  currentUser: User;
+  constructor(private authenticationService: AuthenticationService,
+
+              ) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+  }
   body = `password=${this.model.password}&passwordNew=${this.model.new}&passwordConfirm=${this.model.confirm}`;
+
+
   ngOnInit() {
   }
 
@@ -19,7 +27,7 @@ export class ChangepasswordComponent implements OnInit {
 
   changepass(){
 
-    this.authenticationService.changepass(`password=${this.model.password}&passwordNew=${this.model.new}&passwordConfirm=${this.model.confirm}`,this.loading).subscribe(
+    this.authenticationService.change(`password=${this.model.password}&passwordNew=${this.model.new}&passwordConfirm=${this.model.confirm}`,this.loading,this.currentUser.token).subscribe(
       data => {
         //  console.log("fine login="+  this.model.login+"password : "+this.model.password);
 
