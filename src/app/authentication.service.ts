@@ -69,7 +69,7 @@ export class AuthenticationService {
 
 
   acountload(loginss : string) {
-    return this.http.get('https://localhost:8081/https://localhost:8081/api/users/'+loginss)
+    return this.http.get('https://localhost:8081/api/users/'+loginss)
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
         let users = response.json();

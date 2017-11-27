@@ -19,6 +19,7 @@ import { ItemsService } from './items.service';
 import { ItemComponent } from './item/item.component';
 import { AcountComponent } from './acount/acount.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { AddComponent } from './add/add.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     AlertComponent,
     ItemComponent,
     AcountComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    AddComponent
 
 
   ],

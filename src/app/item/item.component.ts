@@ -25,5 +25,6 @@ export class ItemComponent implements OnInit {
 
   private loadAllItems() {
     this.itemService.getAll().subscribe(items => { this.items = items; });
+
   }
 }
