@@ -98,9 +98,7 @@ con : boolean = false;
     this.loginForms= true;
   }
 
-  toUpperCase () {
-    this.u.username = this.u.username.toUpperCase();
-  }
+
 
   sub()
   {

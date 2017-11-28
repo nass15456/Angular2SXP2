@@ -13,9 +13,12 @@ export class ItemComponent implements OnInit {
   currentUser: User;
 
   items: items[] = [];
+  currentUrl: string ;
+
   constructor(private itemService: ItemsService) {
 
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.currentUrl =  localStorage.getItem('currentUrl');
   }
 
   ngOnInit() {
@@ -24,7 +27,7 @@ export class ItemComponent implements OnInit {
 
 
   private loadAllItems() {
-    this.itemService.getAll().subscribe(items => { this.items = items; });
+    this.itemService.getAll(this.currentUrl).subscribe(items => { this.items = items; });
 
   }
 }

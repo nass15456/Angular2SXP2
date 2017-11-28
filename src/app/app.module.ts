@@ -11,7 +11,7 @@ import {Http, HttpModule} from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
-import { SettingsComponent } from './settings/settings.component';
+
 import { AlertService } from './alert.service';
 import { SettingComponent } from './setting/setting.component';
 import { AlertComponent } from './alert/alert.component';
@@ -30,7 +30,6 @@ import { NavbarComponent } from './navbar/navbar.component';
     SearchComponent,
     LoginComponent,
     SubscribeComponent,
-    SettingsComponent,
     SettingComponent,
     AlertComponent,
     ItemComponent,
@@ -66,10 +65,6 @@ import { NavbarComponent } from './navbar/navbar.component';
          {
           path: 'setting',
           component :  SettingComponent
-         },
-         {
-          path: 'settings',
-           component : SettingsComponent
          },
       {
         path: 'item',

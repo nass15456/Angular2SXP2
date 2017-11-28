@@ -10,12 +10,13 @@ import { User } from '../user';
 export class ChangepasswordComponent implements OnInit {
  loading : boolean = true;
   model: any = {};
+  currentUrl  : string;
   currentUser: User;
   constructor(private authenticationService: AuthenticationService,
 
               ) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
+    this.currentUrl =  localStorage.getItem('currentUrl');
   }
   body = `password=${this.model.password}&passwordNew=${this.model.new}&passwordConfirm=${this.model.confirm}`;
 
@@ -27,7 +28,7 @@ export class ChangepasswordComponent implements OnInit {
 
   changepass(){
 
-    this.authenticationService.change(`password=${this.model.password}&passwordNew=${this.model.new}&passwordConfirm=${this.model.confirm}`,this.loading,this.currentUser.token).subscribe(
+    this.authenticationService.change(this.currentUrl,`password=${this.model.password}&passwordNew=${this.model.new}&passwordConfirm=${this.model.confirm}`,this.loading,this.currentUser.token).subscribe(
       data => {
         //  console.log("fine login="+  this.model.login+"password : "+this.model.password);
 

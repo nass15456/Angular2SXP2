@@ -7,6 +7,7 @@ import { AlertService } from './alert.service';
 import { User } from './user';
 import 'rxjs/add/operator/map';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import {current} from "codelyzer/util/syntaxKind";
 
 @Injectable()
 export class AuthenticationService {
@@ -22,8 +23,9 @@ export class AuthenticationService {
 
 {  /* this.currentUser = JSON.parse(localStorage.getItem('currentUser'))*/ }
 
-  loginDb(loginss : string, loading :boolean) {
-    return this.http.post('https://localhost:8081/api/users/login',  loginss)
+  loginDb(url :string, loginss : string, loading :boolean) {
+    console.log(url+'/api/users/login');
+    return this.http.post(url+'/api/users/login',  loginss)
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
         let user = response.json();
@@ -31,6 +33,7 @@ export class AuthenticationService {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
 
           localStorage.setItem('currentUser', JSON.stringify(user) );
+          localStorage.setItem('currentUrl', url);
             console.log("userid =", user.userid);
 
           console.log("fine login");
@@ -44,10 +47,14 @@ export class AuthenticationService {
         }
       });
   }
- change(loginss : string, loading :boolean, token : string) {
+
+  /** function change password */
+
+
+ change(url : string, loginss : string, loading :boolean, token : string) {
    let headers = new Headers({ 'Auth-Token':token});
    let options = new RequestOptions({ headers: headers })
-    return this.http.post('https://localhost:8081/api/users/password', loginss,{ headers: headers } )
+    return this.http.post(url+'/api/users/password', loginss,{ headers: headers } )
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
         let user = response.json();
@@ -69,7 +76,11 @@ export class AuthenticationService {
       });
   }
 
+  /* get user info :  username , id , public key */
 
+  getAc(id: string,url :string) {
+    return this.http.get(url+'/api/users/'+ id, this.jwt4()).map((response: Response) => response.json());
+  }
   acountload(loginss : string) {
     return this.http.get('https://localhost:8081/api/users/'+loginss)
       .map((response: Response) => {

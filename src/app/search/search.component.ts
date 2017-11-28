@@ -11,15 +11,16 @@ import {items} from "../items";
 export class SearchComponent implements OnInit {
   currentUser: User;
   users: User[] = [];
-  item : items[] = [] ;
+  item : items[][] = [];
   model: any = {};
   find : boolean = false;
-
+  currentUrl : string ;
   constructor(private user :UserserviceService,
               private authentificate :ItemsService   ) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
     this.item = JSON.parse(localStorage.getItem('item'));
+    this.currentUrl =  localStorage.getItem('currentUrl');
   }
 
   ngOnInit() {
@@ -27,7 +28,8 @@ export class SearchComponent implements OnInit {
 
   setSh(){
 
-    this.authentificate.getSh(this.model.search).subscribe(item => { this.item =item ; });
+    this.authentificate.getSh(this.model.search,this.currentUrl).subscribe(item => { this.item =item ; });
+ console.log(this.item);
   }
 
 }

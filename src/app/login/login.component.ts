@@ -21,11 +21,14 @@ export class LoginComponent implements OnInit {
 
   }
   model: any = {};
+
   loading = false;
   body = `login=${this.model.login}&password=${this.model.password}`;
 
 
   ngOnInit() {
+
+    this.model.url = "https://localhost:8081" ;
   }
 
   error(message: string) {
@@ -33,8 +36,8 @@ export class LoginComponent implements OnInit {
   }
 
   loginDb(){
-    this.loading = true;
-    this.authenticationService.loginDb(`login=${this.model.login}&password=${this.model.password}`,this.loading).subscribe(
+
+    this.authenticationService.loginDb(this.model.url,`login=${this.model.login}&password=${this.model.password}`,this.loading).subscribe(
         data => {
         //  console.log("fine login="+  this.model.login+"password : "+this.model.password);
           this.appcomp.connected = true;
