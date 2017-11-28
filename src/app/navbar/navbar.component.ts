@@ -7,11 +7,13 @@ import { AppComponent } from '../app.component';
 })
 export class NavbarComponent implements OnInit {
 
+showbutton : boolean ;
 
 
   constructor(private rot :AppComponent ) { }
 
   ngOnInit() {
+    this.showbutton = true;
   }
 
 }

@@ -25,6 +25,7 @@ connected : boolean ;
 lgout : boolean = false;
 logged : boolean = true;
 con : boolean = false;
+contrac : boolean = false ;
 
 
 
@@ -43,6 +44,7 @@ con : boolean = false;
 
  items()
  {
+   this.contrac = false ;
    this.con =false;
    this.acount= false;
    this.set = false;
@@ -55,6 +57,7 @@ con : boolean = false;
 
   login1()
   {
+    this.contrac = false ;
     this.con =false;
     this.acount= false;
     this.set = false;
@@ -66,7 +69,9 @@ con : boolean = false;
 
   }
   settingUp()
-  {this.con =false;
+  {
+    this.contrac = false ;
+    this.con =false;
     this.acount= false;
     this.set = true;
     this.loginForms=false;
@@ -77,6 +82,7 @@ con : boolean = false;
   }
   searchIt()
   {
+    this.contrac = false ;
     this.con =false;
     this.acount= false;
     this.set = false;
@@ -102,6 +108,7 @@ con : boolean = false;
 
   sub()
   {
+    this.contrac = false ;
     this.con =false;
     this.acount= false;
     this.set = false;
@@ -155,6 +162,7 @@ con : boolean = false;
 
   acounts()
   {
+    this.contrac = false ;
     this.con =false;
     this.acount= true;
     this.set = false;
@@ -167,8 +175,22 @@ con : boolean = false;
 
   contact()
   {
-
+    this.contrac = false ;
     this.con =true;
+    this.acount= false;
+    this.set = false;
+    this.search =false;
+    this.loginForm=false;
+    this.subscribe = false;
+    this.loginForms= false;
+    this.item = false;
+  }
+  
+
+  contract()
+  {
+    this.contrac = true ;
+    this.con = false;
     this.acount= false;
     this.set = false;
     this.search =false;

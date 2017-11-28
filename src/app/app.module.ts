@@ -11,7 +11,7 @@ import {Http, HttpModule} from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
-
+import { ContractsService } from './contracts.service';
 import { AlertService } from './alert.service';
 import { SettingComponent } from './setting/setting.component';
 import { AlertComponent } from './alert/alert.component';
@@ -21,6 +21,7 @@ import { AcountComponent } from './acount/acount.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { AddComponent } from './add/add.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ContractComponent } from './contract/contract.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AcountComponent,
     ChangepasswordComponent,
     AddComponent,
-    NavbarComponent
+    NavbarComponent,
+    ContractComponent
 
 
   ],
@@ -90,12 +92,16 @@ import { NavbarComponent } from './navbar/navbar.component';
       {
         path :'addItem',
         component : AddComponent,
+      },
+      {
+        path :'contract',
+        component :  ContractComponent,
       }
       ]
     )
 
   ],
-  providers: [ AuthenticationService,UserserviceService,AlertService,ItemsService],
+  providers: [ AuthenticationService,UserserviceService,AlertService,ItemsService,ContractsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

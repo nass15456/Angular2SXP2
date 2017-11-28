@@ -265,8 +265,11 @@ h1{
 .al:hover {
   background-color: #111;
 }
-.fix{
-  margin-top: -10px;
-  padding-top: -100px;
+.fix1{
+
   position: fixed;
+}
+.down{
+
+  margin-top: -10px;
 }

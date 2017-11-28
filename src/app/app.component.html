@@ -1,30 +1,36 @@
-<app-navbar> </app-navbar>
+
+  <app-navbar> </app-navbar>
 
 
 
-<div id="sidebar-wrapper" ng-show="hamburger" class="fix" style="">
-  <ul class="sidebar-nav">
-    <li   class="sidebar-brand" (click)="upLogin()"  ><a href="#">Home</a></li>
-    <li ><a  *ngIf="connected" routerLink="/setting" (click)="settingUp()">Settings</a></li>
-    <li ><a *ngIf="connected" routerLink="/item" (click)="items()">Items</a></li>
-    <li><a routerLink="/search" (click)="searchIt()" (click)="downLogin()">Search</a></li>
-    <li><a *ngIf="connected" routerLink="/contact" (click)="contact()" > contact </a></li>
-    <li><a *ngIf="logged" routerLink="/login"   (click)="login1()">Login</a></li>
-
-    <li><a routerLink="/acount"   *ngIf="connected" (click)="acounts()">Acount</a></li>
-    <li><a routerLink="/login"   *ngIf="lgout" (click)="logout()">Logout</a></li>
+<div class="down">
 
 
 
 
-  </ul>
+  <div id="sidebar-wrapper" ng-show="hamburger" class="fix" style="">
+    <ul class="sidebar-nav">
+      <li   class="sidebar-brand" (click)="upLogin()"  ><a href="#">Home</a></li>
+      <li ><a  *ngIf="connected" routerLink="/setting" (click)="settingUp()">Settings</a></li>
+      <li ><a *ngIf="connected" routerLink="/item" (click)="items()">Items</a></li>
+      <li><a routerLink="/search" (click)="searchIt()" (click)="downLogin()">Search</a></li>
+      <li><a *ngIf="connected" routerLink="/contact" (click)="contact()" > contact </a></li>
+      <li><a *ngIf="logged" routerLink="/login"   (click)="login1()">Login</a></li>
+      <li><a routerLink="/contract"   *ngIf="connected" (click)="contact()">contract</a></li>
+      <li><a routerLink="/acount"   *ngIf="connected" (click)="acounts()">Acount</a></li>
+      <li><a routerLink="/login"   *ngIf="lgout" (click)="logout()">Logout</a></li>
 
+
+
+
+    </ul>
+
+
+  </div>
+  <app-alert></app-alert>
+  <router-outlet></router-outlet>
 
 </div>
-<app-alert></app-alert>
-<router-outlet></router-outlet>
-
-
 
 
 

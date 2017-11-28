@@ -34,9 +34,14 @@ a:hover {
 
   margin-bottom: 0px;
   hight : 30px;
-
+  position: fixed;
+}
+h1{
+  display: inline-block;
 }
 button{
-  float: left;
-
+  margin: 0;
+  padding: 0;
+  float: right;
+ margin-left: 400px;
 }
