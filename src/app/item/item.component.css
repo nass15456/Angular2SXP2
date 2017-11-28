@@ -25,4 +25,9 @@ table{
   box-shadow: 0.2px 0.2px 0.2px silver;
   border-bottom-right-radius: 10px;
 }
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
 

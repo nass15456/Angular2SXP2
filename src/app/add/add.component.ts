@@ -25,7 +25,7 @@ export class AddComponent implements OnInit {
   }
   addItem() {
 
-    this.itemService.create(this.model)
+    this.itemService.create(JSON.stringify(this.model))
       .subscribe(
         data => {
           this.alertService.success('Adding successful', true);
@@ -36,6 +36,7 @@ export class AddComponent implements OnInit {
 
         });
   }
+
 }
 
 

@@ -5,12 +5,16 @@ ul {
   overflow: hidden;
   background-color: white;
   text-align: center;
+  margin-bottom: -30px;
+  padding-bottom: 10px;
+
 }
 
 li {
   float: left;
   text-align: center;
   margin-left: 500px;
+
 }
 
 a{
@@ -24,4 +28,15 @@ a{
 
 a:hover {
   background-color: #111;
+}
+
+.minimise{
+
+  margin-bottom: 0px;
+  hight : 30px;
+
+}
+button{
+  float: left;
+
 }

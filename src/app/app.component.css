@@ -266,6 +266,7 @@ h1{
   background-color: #111;
 }
 .fix{
-
+  margin-top: -10px;
+  padding-top: -100px;
   position: fixed;
 }

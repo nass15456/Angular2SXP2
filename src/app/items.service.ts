@@ -11,7 +11,7 @@ Item : items ;
   }
 
   create(item: {}) {
-    return this.http.post('/api/items', item, this.jwt()).map((response: Response) => response.json());
+    return this.http.post('https://localhost:8081/api/items', item, this.jwt4()).map((response: Response) => response.json());
   }
 
   getAll() {
@@ -75,6 +75,7 @@ Item : items ;
       let headers = new Headers({ 'Auth-Token':token});
       console.log(headers);
       headers.set('Accept',token);
+
       return this.http.get('https://localhost:8081/api/search/simple?title='+this.jwt3(userid,token)).map((response: Response) => response.json());
     }
 
@@ -106,6 +107,7 @@ Item : items ;
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (currentUser && currentUser.token) {
       let headers = new Headers({ 'Auth-Token':currentUser.token});
+      headers.set('Content-Type','application/json;charset=UTF-8');
       return new RequestOptions({ headers: headers });
     }
   }

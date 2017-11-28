@@ -91,6 +91,10 @@ import { NavbarComponent } from './navbar/navbar.component';
       {
          path : 'contact',
         component : ContactComponent
+      },
+      {
+        path :'addItem',
+        component : AddComponent,
       }
       ]
     )
