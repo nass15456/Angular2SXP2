@@ -199,6 +199,7 @@ a {
 }
 .sidebar-nav {
   list-style: none;
+  position: fixed;
 }
 .sidebar-nav li a {
   display: block;
@@ -212,6 +213,7 @@ body {
   color: #333;
 }
 #sidebar-wrapper {
+  position: fixed;
   z-index: 1000;
   position: fixed;
   left: 250px;
@@ -240,4 +242,30 @@ h1{
 }
 .left{
   margin-left: 300px;
+}
+.ll{
+  float: left;
+
+}
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.al {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.al:hover {
+  background-color: #111;
+}
+.fix{
+
+  position: fixed;
 }

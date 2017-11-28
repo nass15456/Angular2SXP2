@@ -20,6 +20,7 @@ import { ItemComponent } from './item/item.component';
 import { AcountComponent } from './acount/acount.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { AddComponent } from './add/add.component';
+import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { AddComponent } from './add/add.component';
     ItemComponent,
     AcountComponent,
     ChangepasswordComponent,
-    AddComponent
+    AddComponent,
+    NavbarComponent
 
 
   ],
@@ -85,7 +87,11 @@ import { AddComponent } from './add/add.component';
         path: 'changepassword',
         component :ChangepasswordComponent
       }
-
+       ,
+      {
+         path : 'contact',
+        component : ContactComponent
+      }
       ]
     )
 

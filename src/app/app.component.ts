@@ -24,6 +24,8 @@ u: any = {};
 connected : boolean ;
 lgout : boolean = false;
 logged : boolean = true;
+con : boolean = false;
+
 
 
   loading = false;
@@ -41,7 +43,7 @@ logged : boolean = true;
 
  items()
  {
-
+   this.con =false;
    this.acount= false;
    this.set = false;
    this.loginForms=false;
@@ -53,6 +55,7 @@ logged : boolean = true;
 
   login1()
   {
+    this.con =false;
     this.acount= false;
     this.set = false;
     this.loginForms=false;
@@ -63,7 +66,7 @@ logged : boolean = true;
 
   }
   settingUp()
-  {
+  {this.con =false;
     this.acount= false;
     this.set = true;
     this.loginForms=false;
@@ -74,6 +77,7 @@ logged : boolean = true;
   }
   searchIt()
   {
+    this.con =false;
     this.acount= false;
     this.set = false;
     this.search =true;
@@ -100,6 +104,7 @@ logged : boolean = true;
 
   sub()
   {
+    this.con =false;
     this.acount= false;
     this.set = false;
     this.search =false;
@@ -152,7 +157,21 @@ logged : boolean = true;
 
   acounts()
   {
+    this.con =false;
     this.acount= true;
+    this.set = false;
+    this.search =false;
+    this.loginForm=false;
+    this.subscribe = false;
+    this.loginForms= false;
+    this.item = false;
+  }
+
+  contact()
+  {
+
+    this.con =true;
+    this.acount= false;
     this.set = false;
     this.search =false;
     this.loginForm=false;

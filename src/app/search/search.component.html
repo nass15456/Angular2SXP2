@@ -2,9 +2,23 @@
 
   <input type="text"  class="form-control" [(ngModel)]="model.search"  name="search"  #search="ngModel" required placeholder="Search for items.">
   <h4> {{currentUser.userid}}</h4>
-  <h3 class="left" *ngIf="item!==undefined">item = {{item.description}} </h3>
+
   <button class="btn btn-default" (click)="setSh()" >search </button>
+
+  <div class="left">
+    <h1>Items of {{currentUser.nick}}!</h1>
+    <h2>Items of !</h2>
+    <h3>All registered items:</h3>
+    <ul>
+      <li *ngFor="let item of items">
+        {{item.title}} - {{item[0].description}} - {{item.userId}}
+
+      </li>
+    </ul>
+    <p><a [routerLink]="['/login']">Logout</a></p>
+  </div>
 </div>
+
 
 
 
