@@ -1,16 +1,20 @@
-                       
-                       Licence GPL (Licence Publique Générale)
+          Licence GPL (Licence Publique Générale)
+                          
+                  Version 3, 29 Juin 2007
 
-                       Application Angular4 (logiciel libre)
+  Copyright © 2017, Angular4SXP (Logiciel libre)
 
 
- Les concepteurs de l’application ont le droit de distribuer des copies du programme,
- à titre gratuit ou contre une rémunération et doivent s’assurer que les destinataires disposent du code source.
- Le logiciel libre ne fait l'objet d'aucune garantie, si le logiciel est modifié par quelqu'un d'autre puis transmis 
- à des tiers, les destinataires sont mis au courant que ce qu'ils ont reçu n'est pas le logiciel d'origine,
- de sorte que tout problème introduit par d'autres ne puisse entacher la réputation de l'auteur original.
- Le logiciel peut être copié et le code source du programme distribué, sur n'importe quel support, 
- du moment que c’est apposé sur chaque copie, de manière parfaitement visible, l'avis de droit d'auteur
- adéquat et une exonération de garantie.
- Il faut fournir à tout destinataire du programme un exemplaire de la Licence en même temps que le programme
- Les destinataires du logiciel ne peuvent pas prétendre que le logiciel leurs appartient
+1 - Vous avez la liberté de l’exécuter, pour quelque motif que ce soit. 
+
+2 - Vous avez la liberté de modifier le programme afin qu’il corresponde 
+    mieux à vos besoins (dans la pratique, pour que cette liberté prenne 
+    effet, il vous faut pouvoir accéder au code source, puisqu’opérer des 
+    modifications au sein d’un programme dont on ne dispose pas du code 
+   source est un exercice extrêmement difficile). 
+
+3 - Vous disposez de la liberté d’en redistribuer des copies, que ce soit 
+    gratuitement ou contre une somme d’argent. 
+
+4 - Vous avez la liberté de distribuer des versions modifiées du programme, 
+    afin que la communauté puisse bénéficier de vos améliorations.
