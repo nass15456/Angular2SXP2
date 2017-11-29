@@ -1,17 +1,18 @@
-
-<ul>
-
-
-  <li>  <h1 *ngIf="rot.loginForms || rot.loginForm"  > login </h1></li>
-  <li>  <h1 *ngIf="rot.search " > search</h1></li>
-  <li>  <h1 *ngIf="rot.subscribe" > subscribe </h1></li>
-  <li>  <h1 *ngIf= "rot.set " > settings</h1></li>
-  <li>  <h1 *ngIf= "rot.contrac " > contract</h1></li>
-  <li> <h1 *ngIf= "rot.item " > items  </h1> <button *ngIf= "rot.item && showbutton"  class="btn btn-info" routerLink="/addItem" > add item </button> </li>
-  <li> <h1 *ngIf= "rot.acount" > acount </h1></li>
-  <li> <h1 *ngIf= "rot.con" > contact  </h1></li>
+<div class="navbar">
+<div>
 
 
-</ul>
-<hr>
+  <p *ngIf="rot.loginForms || rot.loginForm"  > Login </p>
+  <p *ngIf="rot.search " > Search</p>
+  <p *ngIf="rot.subscribe" > Subscribe </p>
+  <p *ngIf= "rot.set " > Settings </p>
+  <p  *ngIf= "rot.contrac " > Contract</p>
+  <p *ngIf= "rot.item " > Items   </p>
+  <p *ngIf= "rot.acount" > Acount </p>
+  <p *ngIf= "rot.con" > Contact  </p>
+ <hr>
+</div>
+  <app-alert></app-alert>
+</div>
+
 

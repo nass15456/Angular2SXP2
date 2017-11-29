@@ -1,47 +1,22 @@
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+
+.navbar {
   overflow: hidden;
   background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: inline;
+  z-index: 100;
+  font-size: large;
   text-align: center;
-  margin-bottom: -30px;
-  padding-bottom: 10px;
-
 }
 
-li {
+.navbar a {
   float: left;
-  text-align: center;
-  margin-left: 500px;
-
-}
-
-a{
   display: block;
   color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-
-}
-
-a:hover {
-  background-color: #111;
-}
-
-.minimise{
-
-  margin-bottom: 0px;
-  hight : 30px;
-  position: fixed;
-}
-h1{
-  display: inline-block;
-}
-button{
-  margin: 0;
-  padding: 0;
-  float: right;
- margin-left: 400px;
+  font-size: 17px;
 }

@@ -211,6 +211,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
+
 }
 #sidebar-wrapper {
   position: fixed;
@@ -265,11 +266,13 @@ h1{
 .al:hover {
   background-color: #111;
 }
-.fix1{
+.fix{
 
-  position: fixed;
+margin-top: 70px;
 }
 .down{
 
   margin-top: -10px;
 }
+
+

@@ -1,14 +1,14 @@
 
-  <app-navbar> </app-navbar>
-
-
-
-<div class="down">
+  <app-navbar > </app-navbar>
 
 
 
 
-  <div id="sidebar-wrapper" ng-show="hamburger" class="fix" style="">
+
+
+
+
+  <div id="sidebar-wrapper"  class="fix" style="">
     <ul class="sidebar-nav">
       <li   class="sidebar-brand" (click)="upLogin()"  ><a href="#">Home</a></li>
       <li ><a  *ngIf="connected" routerLink="/setting" (click)="settingUp()">Settings</a></li>
@@ -30,7 +30,7 @@
   <app-alert></app-alert>
   <router-outlet></router-outlet>
 
-</div>
+
 
 
 

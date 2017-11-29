@@ -1,14 +1,13 @@
 <div class="input-group input-group-lg col-xs-10">
-
-  <input type="text"  class="form-control" [(ngModel)]="model.search"  name="search"  #search="ngModel" required placeholder="Search for items.">
-  <h4> {{currentUser.userid}}</h4>
-
-  <button class="btn btn-default" (click)="setSh()" >search </button>
-
   <div class="left">
-    <h1>Items of {{currentUser.nick}}!</h1>
+  <input type="text"  class="form-control" (click)="setSh()" [(ngModel)]="model.search"  name="search"  #search="ngModel" required placeholder="Search for items.">
 
-    <h3>All registered items:</h3>
+
+
+
+
+
+
     <ul>
       <li *ngFor="let item of item">
         {{item[0].title}} - {{item[0].description}} - {{item[0].nick}}

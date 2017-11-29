@@ -1,7 +1,8 @@
 
 .left{
   margin-left: 300px;
-
+ padding-top: 50px;
+  margin-bottom: 30px;
 
 }
 table, thead, td {
@@ -31,3 +32,4 @@ table{
   background-color: #fff;
   border-color: #ccc;
 }
+

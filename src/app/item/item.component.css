@@ -1,7 +1,7 @@
 .left{
   margin-left: 300px;
-
-
+padding-top: 50px;
+  margin-top: 10px;
 }
 table, thead, td {
   border: 1px solid black;
@@ -29,5 +29,6 @@ table{
   color: #333;
   background-color: #fff;
   border-color: #ccc;
+ float: right;
 }
 
